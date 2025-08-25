@@ -16,7 +16,6 @@
 #define PASV_PORT_MIN 50000
 #define PASV_PORT_MAX 51000
 
-// Function declarations
 void send_response(int sock, const char* msg);
 void handle_client(int client_sock);
 int open_pasv_socket(int *port_out);
@@ -78,7 +77,7 @@ void send_response(int sock, const char* msg) {
     send(sock, msg, strlen(msg), 0);
 }
 
-/* Get the local LAN IP address (non-loopback)
+/* 
 int get_local_ip(char *ip_buffer, size_t buflen) {
     strncpy(ip_buffer, "127.0.0.1", buflen);
     return 0;
@@ -327,3 +326,4 @@ void handle_client(int client_sock) {
     if (pasv_data_sock != -1)
         close(pasv_data_sock);
 }
+
